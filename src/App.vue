@@ -46,13 +46,10 @@
 <script>
 import { dataUrl, webStyle } from "../config/config.json";
 import { defineComponent } from "vue";
+import useWebThemeController from "./hooks/useWebColorController";
 export default defineComponent({
   setup() {
-    console.log(dataUrl);
-    console.log(webStyle);
-    document.body.style.setProperty("--background", webStyle[0].background);
-    document.body.style.setProperty("--whiteShadow", webStyle[0].whiteShadow);
-    document.body.style.setProperty("--blackShadow", webStyle[0].blackShadow);
+    useWebThemeController(6);
     return {
       dataUrl,
       webStyle,
