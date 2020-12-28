@@ -17,22 +17,22 @@
         <div id="nav">
           <a-row type="flex" justify="space-around">
             <a-col :span="3">
-              <router-link class="navLink navLink_selected" to="/">文章</router-link>
+              <router-link name="article" class="navLink navLink_selected" to="/article">文章</router-link>
             </a-col>
             <a-col :span="3">
-              <router-link class="navLink" to="/q">日记</router-link>
+              <router-link name="diary" class="navLink" to="/diary">日记</router-link>
             </a-col>
             <a-col :span="3">
-              <router-link class="navLink" to="/w">归档</router-link>
+              <router-link name="archive" class="navLink" to="/archive">归档</router-link>
             </a-col>
             <a-col :span="3">
-              <router-link class="navLink" to="/e">留言</router-link>
+              <router-link name="interact" class="navLink" to="/interact">留言</router-link>
             </a-col>
             <a-col :span="3">
-              <router-link class="navLink" to="/e">友链</router-link>
+              <router-link name="friend" class="navLink" to="/friend">友链</router-link>
             </a-col>
             <a-col :span="3">
-              <router-link class="navLink" to="/e">关于</router-link>
+              <router-link name="about" class="navLink" to="/about">关于</router-link>
             </a-col>
           </a-row>
         </div>
@@ -51,11 +51,24 @@
   </a-row>
 </template>
 <script>
-import { defineComponent } from "vue";
-
+import { defineComponent, onMounted, onUpdated } from "vue";
+import useCurrentPathname from "../hooks/useWebColorController";
 export default defineComponent({
-  upSet() {
-    console.log(window.screen.width);
+  setup(props, context) {
+    const navLinkClick = (pathname) => {
+      const navList = document.getElementsByClassName("navLink");
+      navList.forEach(
+        (i) =>
+          (i.className =
+            i.name === pathname ? "navLink navLink_selected" : "navLink")
+      );
+    };
+    onMounted(() => {
+      document.getElementById("nav").addEventListener("click", (e) => {
+        navLinkClick(e.target.name);
+      });
+    });
+    return {};
   },
 });
 </script>
@@ -69,7 +82,7 @@ export default defineComponent({
 
 .navLink {
   display: block;
-  padding: 10px 0px;
+  padding: 10px 20px;
   border-radius: 20px;
   color: var(--commonColor) !important;
   box-shadow: var(--whiteShadow), var(--blackShadow);
@@ -140,7 +153,7 @@ export default defineComponent({
   box-sizing: border-box;
   font-weight: 800;
   letter-spacing: 1px;
-  color: var(--commonColor) ;
+  color: var(--commonColor);
   text-align: left;
 }
 .logo {
