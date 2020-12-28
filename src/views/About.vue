@@ -17,7 +17,7 @@
   display: flex;
   justify-content: left;
   border-radius: 20px;
-  box-shadow: 18px 18px 30px #d1d9e6, -18px -18px 30px #fff;
+  box-shadow: var(--tomato-whiteShadow), var(--tomato-blackShadow);
   cursor: pointer;
 }
 </style>

@@ -4,11 +4,7 @@
       <a-col :xs="18" style="display: flex; justify-content: space-between">
         <a-col :xs="3.5">
           <div class="modest-logo">
-            <img
-              class="logo"
-              src="https://www.modestfun.com:8080/img/?name=logo"
-              alt=""
-            />
+            <img class="logo" src="https://www.modestfun.com:8080/img/?name=logo" alt />
             <p>ModestFun</p>
           </div>
         </a-col>
@@ -16,7 +12,7 @@
           <div id="nav">
             <a-row>
               <a-col :xs="6">
-                <router-link to="/">Home</router-link> |
+                <router-link to="/">Home</router-link>|
                 <router-link to="/about">About</router-link>
               </a-col>
               <a-col :xs="6">
@@ -36,7 +32,7 @@
             <img
               class="logo"
               src="https://www.modestfun.com:8080/getPicStoreItem?name=1588142046844"
-              alt=""
+              alt
             />
             <p>请登录</p>
           </div>
@@ -50,7 +46,7 @@
 
 <style>
 .background-default {
-  background: #ecf0f3;
+  background: var(--tomato-bgColor);
   position: absolute;
   width: 100%;
   height: 100%;
@@ -67,7 +63,7 @@
   margin-top: 30px;
   padding: 30px;
   border-radius: 20px;
-  box-shadow: 18px 18px 30px #d1d9e6, -18px -18px 30px #fff;
+ box-shadow: var(--tomato-whiteShadow), var(--tomato-blackShadow);
 }
 
 .modest-logo {
@@ -78,7 +74,7 @@
   justify-content: left;
   border-radius: 20px;
   z-index: 10;
-  box-shadow: 18px 18px 30px #d1d9e6, -18px -18px 30px #fff;
+  box-shadow: var(--tomato-whiteShadow), var(--tomato-blackShadow);
   cursor: pointer;
 }
 .modest-logo:active {
@@ -88,7 +84,7 @@
   display: flex;
   justify-content: left;
   border-radius: 20px;
-  box-shadow: inset 18px 18px 30px #d1d9e6, inset -18px -18px 30px #fff;
+  box-shadow: inset var(--tomato-whiteShadow), inset var(--tomato-blackShadow);
 }
 .modest-logo p {
   width: 100%;
@@ -107,7 +103,7 @@
   display: block;
   background: #ecf0f3;
   border-radius: 20px;
-  box-shadow: 18px 18px 30px #d1d9e6, -18px -18px 30px #fff;
+  /* box-shadow: 18px 18px 30px #d1d9e6, -18px -18px 30px #fff; */
 }
 
 #nav a {
