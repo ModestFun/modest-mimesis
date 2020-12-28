@@ -3,20 +3,25 @@
     "dataUrl": "http://localhost:82",
     "webStyle": [
         {
-            "background":"#ecf0f3",
-            "whiteShadow":"3px 3px 3px rgba(0, 0, 0, 0.1)",
-            "blackShadow":"-3px -3px 3px rgba(255, 255, 255, 1)"
+            "background": "#ecf0f3",
+            "selectColor": "#ff6700",
+            "commonColor": "#333",
+            "whiteShadow": "3px 3px 3px rgba(0, 0, 0, 0.1)",
+            "blackShadow": "-3px -3px 3px rgba(255, 255, 255, 1)"
         },
         {
-            "background":"#db6161",
-            "whiteShadow":"3px 3px 3px #b14f4f",
-            "blackShadow":"-3px -3px 3px #ff7373"
+            "background": "#db6161",
+            "selectColor": "#ff6700",
+            "commonColor": "#333",
+            "whiteShadow": "3px 3px 3px #b14f4f",
+            "blackShadow": "-3px -3px 3px #ff7373"
         },
         {
-            "background":"#363030",
-            "whiteShadow":"3px 3px 3px #2c2727",
-            "blackShadow":"-3px -3px 3px #403939"
+            "background": "#363030",
+            "selectColor": "#ff6700",
+            "commonColor": "#333",
+            "whiteShadow": "3px 3px 3px #2c2727",
+            "blackShadow": "-3px -3px 3px #403939"
         }
     ]
-
 }

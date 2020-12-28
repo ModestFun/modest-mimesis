@@ -11,6 +11,8 @@ interface webStyle {
   background: string;
   whiteShadow: string;
   blackShadow: string;
+  selectColor: string;
+  commonColor: string;
 }
 
 function useWebThemeController(moodScore: number): void {
@@ -26,11 +28,13 @@ function computeColor(moodScore: Ref<number>): string {
   }
 }
 
-function setWebTheme(color: string) {
+function setWebTheme(color: string): void {
   const result: webStyle = global.webStyle.find(i => i.background === color) || global.webStyle[0]
   document.body.style.setProperty("--background", result.background);
   document.body.style.setProperty("--whiteShadow", result.whiteShadow);
   document.body.style.setProperty("--blackShadow", result.blackShadow);
+  document.body.style.setProperty("--selectColor", result.selectColor);
+  document.body.style.setProperty("--commonColor", result.commonColor);
 }
 
 export default useWebThemeController
