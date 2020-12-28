@@ -49,7 +49,7 @@ import { defineComponent } from "vue";
 import useWebThemeController from "./hooks/useWebColorController";
 export default defineComponent({
   setup() {
-    useWebThemeController(6);
+    useWebThemeController();
     return {
       dataUrl,
       webStyle,
