@@ -43,10 +43,26 @@
     <router-view />
   </div>
 </template>
-
+<script>
+import { dataUrl, webStyle } from "../config/config.json";
+import { defineComponent } from "vue";
+export default defineComponent({
+  setup() {
+    console.log(dataUrl);
+    console.log(webStyle);
+    document.body.style.setProperty("--background", webStyle[0].background);
+    document.body.style.setProperty("--whiteShadow", webStyle[0].whiteShadow);
+    document.body.style.setProperty("--blackShadow", webStyle[0].blackShadow);
+    return {
+      dataUrl,
+      webStyle,
+    };
+  },
+});
+</script>
 <style>
 .background-default {
-  background: var(--tomato-bgColor);
+  background: var(--background);
   position: absolute;
   width: 100%;
   height: 100%;
@@ -63,7 +79,7 @@
   margin-top: 30px;
   padding: 30px;
   border-radius: 20px;
- box-shadow: var(--tomato-whiteShadow), var(--tomato-blackShadow);
+  box-shadow: var(--whiteShadow), var(--blackShadow);
 }
 
 .modest-logo {
@@ -74,7 +90,7 @@
   justify-content: left;
   border-radius: 20px;
   z-index: 10;
-  box-shadow: var(--tomato-whiteShadow), var(--tomato-blackShadow);
+  box-shadow: var(--whiteShadow), var(--blackShadow);
   cursor: pointer;
 }
 .modest-logo:active {
@@ -84,7 +100,7 @@
   display: flex;
   justify-content: left;
   border-radius: 20px;
-  box-shadow: inset var(--tomato-whiteShadow), inset var(--tomato-blackShadow);
+  box-shadow: inset var(--whiteShadow), inset var(--blackShadow);
 }
 .modest-logo p {
   width: 100%;
@@ -103,7 +119,6 @@
   display: block;
   background: #ecf0f3;
   border-radius: 20px;
-  /* box-shadow: 18px 18px 30px #d1d9e6, -18px -18px 30px #fff; */
 }
 
 #nav a {
