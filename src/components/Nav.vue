@@ -52,22 +52,10 @@
 </template>
 <script>
 import { defineComponent, onMounted, onUpdated } from "vue";
-import useCurrentPathname from "../hooks/useWebColorController";
+import useNavSelected from "../hooks/useNavSelected";
 export default defineComponent({
   setup(props, context) {
-    const navLinkClick = (pathname) => {
-      const navList = document.getElementsByClassName("navLink");
-      navList.forEach(
-        (i) =>
-          (i.className =
-            i.name === pathname ? "navLink navLink_selected" : "navLink")
-      );
-    };
-    onMounted(() => {
-      document.getElementById("nav").addEventListener("click", (e) => {
-        navLinkClick(e.target.name);
-      });
-    });
+    useNavSelected()
     return {};
   },
 });
