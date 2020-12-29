@@ -51,11 +51,12 @@
   </a-row>
 </template>
 <script>
+import { Row, Col } from "ant-design-vue";
 import { defineComponent, onMounted, onUpdated } from "vue";
 import useNavSelected from "../hooks/useNavSelected";
 export default defineComponent({
   setup(props, context) {
-    useNavSelected()
+    useNavSelected();
     return {};
   },
 });
