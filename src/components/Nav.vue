@@ -7,12 +7,6 @@
       :md="24"
       style="display: flex; justify-content: space-between"
     >
-      <!-- <a-col :xxl="0" :xl="0" :lg="0" :xs="3.5">
-        <div class="nav-logo">
-          <img class="logo" src="https://www.modestfun.com:8080/img/?name=logo" alt />
-          <p>asdad</p>
-        </div>
-      </a-col>-->
       <a-col :xxl="3.5" :xl="3.5" :lg="3.5">
         <div class="nav-logo">
           <img class="logo" src="https://www.modestfun.com:8080/img/?name=logo" alt />
@@ -23,7 +17,12 @@
         <div id="nav">
           <a-row type="flex" justify="space-around">
             <a-col :span="3" v-for="item in navList">
-              <router-link :path="item.path" :name="item.article" :class="item.class" :to="item.path">{{item.title}}</router-link>
+              <router-link
+                :path="item.path"
+                :name="item.article"
+                :class="item.class"
+                :to="item.path"
+              >{{item.title}}</router-link>
             </a-col>
           </a-row>
         </div>
@@ -51,7 +50,6 @@ export default defineComponent({
   setup (props, context) {
     const navList = useNavMenu()
     useNavSelected(window.location.pathname);
-
     return { navList };
   },
 });
@@ -73,9 +71,17 @@ export default defineComponent({
   box-shadow: var(--whiteShadow), var(--blackShadow);
 }
 
+.navLink:hover {
+  animation-name: rubberBand;
+  animation-duration: 0.5s;
+}
+
 .navLink_selected {
   color: var(--selectColor) !important;
   box-shadow: inset var(--whiteShadow), inset var(--blackShadow);
+}
+.navLink_selected:hover {
+  animation-name: none;
 }
 
 .nav-logo {

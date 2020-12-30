@@ -17,7 +17,7 @@ function useNavSelected(initSelected: string): void {
       navList.forEach(
         (i) =>
         (i.class =
-          i.path === pathname ? "navLink navLink_selected" : "navLink")
+          i.path === pathname ? "navLink navLink_selected" : "navLink animated")
       );
     }
   };
