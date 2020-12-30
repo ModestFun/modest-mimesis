@@ -1,47 +1,54 @@
 <template>
-  <a-row type="flex" justify="center">
-    <a-col
-      :xxl="18"
-      :xl="20"
-      :lg="24"
-      :md="24"
-      style="display: flex; justify-content: space-between"
-    >
-      <a-col :xxl="3.5" :xl="3.5" :lg="3.5">
-        <div class="nav-logo">
+  <a-row>
+    <a-col :xxl="0" :xl="0" :lg="0" :md="2" :xs="0"></a-col>
+    <a-col :xxl="0" :xl="0" :lg="0" :md="4" :xs="5">
+      <div class="nav-user">
+        <img
+          class="logo"
+          src="https://www.modestfun.com:8080/getPicStoreItem?name=1588142046844"
+          alt
+        />
+      </div>
+    </a-col>
+    <a-col :xxl="4" :xl="2" :lg="0" :md="2" :xs="2"></a-col>
+    <a-col :xxl="3" :xl="3" :lg="4" :md="8" :xs="10">
+      <div class="nav-logo">
+        <div style="display:flex">
           <img class="logo" src="https://www.modestfun.com:8080/img/?name=logo" alt />
           <p>ModestFun</p>
-          <p class="logo-tips animated">
-            在这个娱乐至死的年代，提醒自己只能
-            <span class="log-tips-strong">“适度娱乐”</span>
-          </p>
         </div>
-      </a-col>
-      <a-col :xxl="16" :xl="14" :lg="14" :md="14">
-        <div id="nav">
-          <a-row type="flex" justify="space-around">
-            <a-col :span="3" v-for="item in navList">
-              <router-link
-                :path="item.path"
-                :name="item.article"
-                :class="item.class"
-                :to="item.path"
-              >{{item.title}}</router-link>
-            </a-col>
-          </a-row>
-        </div>
-      </a-col>
-      <a-col :xxl="3.5" :xl="3.5" :lg="3.5" :md="3.5">
-        <div class="nav-user">
-          <img
-            class="logo"
-            src="https://www.modestfun.com:8080/getPicStoreItem?name=1588142046844"
-            alt
-          />
-          <p>请登录</p>
-        </div>
-      </a-col>
+        <p class="logo-tips animated">
+          在这个娱乐至死的年代，提醒自己只能
+          <span class="log-tips-strong">“适度娱乐”</span>
+        </p>
+      </div>
     </a-col>
+    <a-col :xxl="1" :xl="1" :lg="1" :md="0"></a-col>
+    <a-col :xxl="9" :xl="13" :lg="15" :md="0" :xs="0">
+      <div id="nav">
+        <a-row type="flex" justify="space-around">
+          <a-col :span="3" v-for="item in navList">
+            <router-link
+              :path="item.path"
+              :name="item.article"
+              :class="item.class"
+              :to="item.path"
+            >{{item.title}}</router-link>
+          </a-col>
+        </a-row>
+      </div>
+    </a-col>
+    <a-col :xxl="1" :xl="1" :lg="1" :md="2" :xs="2"></a-col>
+    <a-col :xxl="2" :xl="2" :lg="3" :md="4" :xs="5">
+      <div class="nav-user">
+        <img
+          class="logo"
+          src="https://www.modestfun.com:8080/getPicStoreItem?name=1588142046844"
+          alt
+        />
+      </div>
+    </a-col>
+    <a-col :xxl="4" :xl="2" :lg="0" :md="2" :xs="0" :sm="0"></a-col>
   </a-row>
 </template>
 <script>
@@ -90,11 +97,12 @@ export default defineComponent({
 }
 
 .nav-logo {
+  min-width: 200px;
   margin-top: 20px;
-  padding: 10px 30px;
+  padding: 10px 15px;
   height: 62px;
   display: flex;
-  justify-content: left;
+  justify-content: space-around;
   border-radius: 20px;
   z-index: 10;
   box-shadow: var(--whiteShadow), var(--blackShadow);
@@ -114,7 +122,8 @@ export default defineComponent({
   border-radius: 20px;
   box-shadow: inset var(--whiteShadow), inset var(--blackShadow);
   animation-name: bounceInDown;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
+  animation-delay: 0s;
 }
 
 .nav-logo .logo-tips .log-tips-strong {
@@ -137,7 +146,8 @@ export default defineComponent({
 .nav-logo p {
   width: 100%;
   height: 100%;
-  padding-left: 15px;
+  width: 108px;
+  padding-left: 10px;
   line-height: 40px;
   box-sizing: border-box;
   font-weight: 800;
@@ -149,6 +159,7 @@ export default defineComponent({
 .nav-user {
   margin-top: 20px;
   padding: 10px 30px;
+  /* width: 160px; */
   height: 62px;
   display: flex;
   justify-content: left;
@@ -156,6 +167,7 @@ export default defineComponent({
   z-index: 10;
   box-shadow: var(--whiteShadow), var(--blackShadow);
   cursor: pointer;
+  position: relative;
 }
 .nav-user:active {
   margin-top: 20px;
@@ -166,23 +178,13 @@ export default defineComponent({
   border-radius: 20px;
   box-shadow: inset var(--whiteShadow), inset var(--blackShadow);
 }
-.nav-user p {
-  width: 100%;
-  height: 100%;
-  padding-left: 15px;
-  line-height: 40px;
-  box-sizing: border-box;
-  font-weight: 800;
-  letter-spacing: 1px;
-  color: var(--commonColor);
-  text-align: left;
-}
 .logo {
   width: 40px;
   height: 40px;
   display: block;
   background: #ecf0f3;
   border-radius: 20px;
+  margin: 0px auto;
 }
 
 #nav a {
