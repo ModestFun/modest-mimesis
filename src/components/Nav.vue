@@ -7,32 +7,23 @@
       :md="24"
       style="display: flex; justify-content: space-between"
     >
+      <!-- <a-col :xxl="0" :xl="0" :lg="0" :xs="3.5">
+        <div class="nav-logo">
+          <img class="logo" src="https://www.modestfun.com:8080/img/?name=logo" alt />
+          <p>asdad</p>
+        </div>
+      </a-col>-->
       <a-col :xxl="3.5" :xl="3.5" :lg="3.5">
         <div class="nav-logo">
           <img class="logo" src="https://www.modestfun.com:8080/img/?name=logo" alt />
           <p>ModestFun</p>
         </div>
       </a-col>
-      <a-col :xxl="14" :xl="14" :lg="14" :md="14">
+      <a-col :xxl="16" :xl="14" :lg="14" :md="14">
         <div id="nav">
           <a-row type="flex" justify="space-around">
-            <a-col :span="3">
-              <router-link name="article" class="navLink navLink_selected" to="/article">文章</router-link>
-            </a-col>
-            <a-col :span="3">
-              <router-link name="diary" class="navLink" to="/diary">日记</router-link>
-            </a-col>
-            <a-col :span="3">
-              <router-link name="archive" class="navLink" to="/archive">归档</router-link>
-            </a-col>
-            <a-col :span="3">
-              <router-link name="interact" class="navLink" to="/interact">留言</router-link>
-            </a-col>
-            <a-col :span="3">
-              <router-link name="friend" class="navLink" to="/friend">友链</router-link>
-            </a-col>
-            <a-col :span="3">
-              <router-link name="about" class="navLink" to="/about">关于</router-link>
+            <a-col :span="3" v-for="item in navList">
+              <router-link :path="item.path" :name="item.article" :class="item.class" :to="item.path">{{item.title}}</router-link>
             </a-col>
           </a-row>
         </div>
@@ -54,24 +45,29 @@
 import { Row, Col } from "ant-design-vue";
 import { defineComponent, onMounted, onUpdated } from "vue";
 import useNavSelected from "../hooks/useNavSelected";
+import useNavMenu from '../hooks/useNavMenu'
 export default defineComponent({
-  setup(props, context) {
-    useNavSelected();
-    return {};
+
+  setup (props, context) {
+    const navList = useNavMenu()
+    useNavSelected(window.location.pathname);
+
+    return { navList };
   },
 });
 </script>
 <style scoped>
 #nav {
   margin-top: 20px;
-  padding: 20px 30px;
+  padding: 15px 15px;
+  height: 62px;
   border-radius: 20px;
-  box-shadow: var(--whiteShadow), var(--blackShadow);
+  box-shadow: inset var(--whiteShadow), inset var(--blackShadow);
 }
 
 .navLink {
   display: block;
-  padding: 10px 20px;
+  padding: 6px 15px;
   border-radius: 20px;
   color: var(--commonColor) !important;
   box-shadow: var(--whiteShadow), var(--blackShadow);
@@ -84,8 +80,8 @@ export default defineComponent({
 
 .nav-logo {
   margin-top: 20px;
-  padding: 20px 30px;
-  height: 82px;
+  padding: 10px 30px;
+  height: 62px;
   display: flex;
   justify-content: left;
   border-radius: 20px;
@@ -95,8 +91,8 @@ export default defineComponent({
 }
 .nav-logo:active {
   margin-top: 20px;
-  padding: 20px 30px;
-  height: 82px;
+  padding: 10px 30px;
+  height: 62px;
   display: flex;
   justify-content: left;
   border-radius: 20px;
@@ -116,8 +112,8 @@ export default defineComponent({
 
 .nav-user {
   margin-top: 20px;
-  padding: 20px 30px;
-  height: 82px;
+  padding: 10px 30px;
+  height: 62px;
   display: flex;
   justify-content: left;
   border-radius: 20px;
@@ -127,8 +123,8 @@ export default defineComponent({
 }
 .nav-user:active {
   margin-top: 20px;
-  padding: 20px 30px;
-  height: 82px;
+  padding: 10px 30px;
+  height: 62px;
   display: flex;
   justify-content: left;
   border-radius: 20px;

@@ -1,26 +1,38 @@
-import { onMounted, onUnmounted } from 'vue'
+import { navList } from './../../config/menu.config';
+import { onBeforeMount, onMounted, onUnmounted } from 'vue'
+import useNavMenu from './useNavMenu';
 
-function useNavSelected(): void {
-  const navLinkClick = (e: any): void => {
-    if (e.target.name) {
-      const navList: any[] = <HTMLElement[]><any>document.getElementsByClassName("navLink");
+interface navLink {
+  name: string;
+  class: string;
+  path: string;
+  component: () => {};
+  title: string;
+}
+
+function useNavSelected(initSelected: string): void {
+  const navLinkClick = (pathname: string): void => {
+    if (navList.find(i => i.path === pathname)) {
+      const navList: navLink[] = useNavMenu()
       navList.forEach(
         (i) =>
-        (i.className =
-          i.name === e.target.name ? "navLink navLink_selected" : "navLink")
+        (i.class =
+          i.path === pathname ? "navLink navLink_selected" : "navLink")
       );
     }
   };
+  onBeforeMount(() => {
+    navLinkClick(initSelected)
+  })
   onMounted(() => {
     document.getElementById("nav")!.addEventListener('click', (e): void => {
-      navLinkClick(e)
+      navLinkClick('/' + (e.target + "").split(' ')[0].split('/')[3])
     })
   });
   onUnmounted(() => {
-    document.getElementById("nav")!.removeEventListener('click', (e): void => {
-      navLinkClick(e)
-    })
+    document.getElementById("nav")!.removeEventListener('click', (): void => { })
   });
+
 }
 
 export default useNavSelected
