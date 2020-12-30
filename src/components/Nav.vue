@@ -11,6 +11,10 @@
         <div class="nav-logo">
           <img class="logo" src="https://www.modestfun.com:8080/img/?name=logo" alt />
           <p>ModestFun</p>
+          <p class="logo-tips animated">
+            在这个娱乐至死的年代，提醒自己只能
+            <span class="log-tips-strong">“适度娱乐”</span>
+          </p>
         </div>
       </a-col>
       <a-col :xxl="16" :xl="14" :lg="14" :md="14">
@@ -80,6 +84,7 @@ export default defineComponent({
   color: var(--selectColor) !important;
   box-shadow: inset var(--whiteShadow), inset var(--blackShadow);
 }
+
 .navLink_selected:hover {
   animation-name: none;
 }
@@ -93,8 +98,33 @@ export default defineComponent({
   border-radius: 20px;
   z-index: 10;
   box-shadow: var(--whiteShadow), var(--blackShadow);
+  position: relative;
   cursor: pointer;
 }
+.nav-logo .logo-tips {
+  display: none;
+  position: absolute;
+  margin-top: 62px;
+  color: var(--commonColor) !important;
+  font-size: 12px;
+  line-height: 20px;
+  left: 0px;
+  padding: 15px 15px;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: inset var(--whiteShadow), inset var(--blackShadow);
+  animation-name: bounceInDown;
+  animation-duration: 1s;
+}
+
+.nav-logo .logo-tips .log-tips-strong {
+  color: var(--selectColor);
+}
+
+.nav-logo:hover .logo-tips {
+  display: block;
+}
+
 .nav-logo:active {
   margin-top: 20px;
   padding: 10px 30px;
