@@ -8,12 +8,12 @@
 import { dataUrl, webStyle } from "../config/config.json";
 import { defineComponent } from "vue";
 import useWebThemeController from "./hooks/useWebColorController";
-import  Nav from "@/components/Nav";
+import Nav from "@/components/Nav";
 export default defineComponent({
   components: {
     Nav,
   },
-  setup() {
+  setup () {
     useWebThemeController();
     return {
       dataUrl,
@@ -36,5 +36,4 @@ export default defineComponent({
   text-align: center;
   color: #2c3e50;
 }
-
 </style>

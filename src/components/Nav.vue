@@ -137,11 +137,6 @@ export default defineComponent({
 }
 
 .nav-logo:active {
-  margin-top: 20px;
-  padding: 10px 30px;
-  height: 62px;
-  display: flex;
-  justify-content: left;
   border-radius: 20px;
   box-shadow: inset var(--whiteShadow), inset var(--blackShadow);
 }
