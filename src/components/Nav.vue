@@ -109,14 +109,16 @@ export default defineComponent({
   position: relative;
   cursor: pointer;
 }
+
 .nav-logo .logo-tips {
   display: none;
   position: absolute;
-  margin-top: 62px;
+  min-width: 200px;
   color: var(--commonColor) !important;
   font-size: 12px;
   line-height: 20px;
-  left: 0px;
+  margin: 0px auto;
+  margin-top: 62px;
   padding: 15px 15px;
   text-align: center;
   border-radius: 20px;
