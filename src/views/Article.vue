@@ -5,7 +5,7 @@
       <a-col :xxl="11" :xl="14" :lg="16" :md="20" :xs="24">
         <div class="page">
           <div class="ad">人生不止眼前的苟且，还有远方的你看得见的、看不见的苟且</div>
-          
+          <Section></Section>
         </div>
       </a-col>
       <a-col :xxl="1" :xl="1" :lg="2" :md="1" :xs="0" :sm="0"></a-col>
@@ -16,6 +16,21 @@
     </a-row>
   </div>
 </template>
+<script>
+import Section from '@/components/Section'
+import { defineComponent } from 'vue'
+import useArticleList from '../hooks/userArticleList'
+export default defineComponent({
+  components: {
+    Section
+  },
+  setup () {
+    return {
+
+    }
+  }
+})
+</script>
 <style>
 .article {
   margin-top: 20px;
