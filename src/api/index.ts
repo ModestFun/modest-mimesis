@@ -1,4 +1,4 @@
-import axios from '@/utils/vue-axios'
+import axios from 'axios'
 import global from '../../config/config.json'
 
  const api = {

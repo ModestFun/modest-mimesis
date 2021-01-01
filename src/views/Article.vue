@@ -1,11 +1,14 @@
 <template>
   <div class="article">
     <a-row>
-      <a-col :xxl="4" :xl="2" :lg="0" :md="2" :xs="2"></a-col>
+      <a-col :xxl="4" :xl="2" :lg="0" :md="2" :xs="0"></a-col>
       <a-col :xxl="11" :xl="14" :lg="16" :md="20" :xs="24">
         <div class="page">
           <div class="ad">人生不止眼前的苟且，还有远方的你看得见的、看不见的苟且</div>
-          <Section></Section>
+          <div class="sections">
+            <Section></Section>
+            <Section></Section>
+          </div>
         </div>
       </a-col>
       <a-col :xxl="1" :xl="1" :lg="2" :md="1" :xs="0" :sm="0"></a-col>
@@ -19,14 +22,15 @@
 <script>
 import Section from '@/components/Section'
 import { defineComponent } from 'vue'
-import useArticleList from '../hooks/userArticleList'
+import useArticleList from '../hooks/useArticleList'
 export default defineComponent({
   components: {
     Section
   },
   setup () {
-    return {
 
+    useArticleList()
+    return {
     }
   }
 })
@@ -47,11 +51,21 @@ export default defineComponent({
   background-color: turquoise;
 }
 .ad {
+  padding: 0px 10px;
   width: 100%;
   height: 40px;
   line-height: 40px;
   border-radius: 10px;
+  overflow: hidden;
   color: var(--commonColor) !important;
   box-shadow: var(--whiteShadow), var(--blackShadow);
+}
+.sections {
+  margin-top: 20px;
+  width: 100%;
+  height: 100%;
+  padding: 0px 15px;
+  border-radius: 10px;
+  box-shadow: inset var(--whiteShadow), inset var(--blackShadow);
 }
 </style>

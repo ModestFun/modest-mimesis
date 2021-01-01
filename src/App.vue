@@ -26,6 +26,7 @@ export default defineComponent({
 .background-default {
   background: var(--background);
   position: absolute;
+  padding: 0px 10px;
   width: 100%;
   height: 100%;
 }

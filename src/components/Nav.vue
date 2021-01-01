@@ -1,7 +1,7 @@
 <template>
   <a-row>
     <a-col :xxl="0" :xl="0" :lg="0" :md="2" :xs="0"></a-col>
-    <a-col :xxl="0" :xl="0" :lg="0" :md="4" :xs="5">
+    <a-col :xxl="0" :xl="0" :lg="0" :md="4" :xs="4">
       <div class="nav-user">
         <img
           class="logo"
@@ -11,7 +11,7 @@
       </div>
     </a-col>
     <a-col :xxl="4" :xl="2" :lg="0" :md="2" :xs="2"></a-col>
-    <a-col :xxl="3" :xl="3" :lg="4" :md="8" :xs="10">
+    <a-col :xxl="3" :xl="3" :lg="4" :md="8" :xs="12">
       <div class="nav-logo">
         <div style="display:flex">
           <img class="logo" src="https://www.modestfun.com:8080/img/?name=logo" alt />
@@ -39,7 +39,7 @@
       </div>
     </a-col>
     <a-col :xxl="1" :xl="1" :lg="1" :md="2" :xs="2"></a-col>
-    <a-col :xxl="2" :xl="2" :lg="3" :md="4" :xs="5">
+    <a-col :xxl="2" :xl="2" :lg="3" :md="4" :xs="4">
       <div class="nav-user">
         <img
           class="logo"
@@ -155,7 +155,7 @@ export default defineComponent({
 
 .nav-user {
   margin-top: 20px;
-  padding: 10px 30px;
+  padding: 10px 10px;
   /* width: 160px; */
   height: 62px;
   display: flex;

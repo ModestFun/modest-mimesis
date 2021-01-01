@@ -1,7 +1,7 @@
 export const navList = [
   {
     name: 'article',
-    class: 'navLink',
+    class: 'navLink navLink_selected',
     path: '/article',
     component: () => import('../src/views/Home.vue'),
     title: '文章'

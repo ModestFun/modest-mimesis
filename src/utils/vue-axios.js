@@ -17,9 +17,8 @@ axios.defaults.headers['Content-Type'] = 'application/json;charset=UTF-8' // 请
 // http request 拦截器
 axios.interceptors.request.use(
     config => {
-        // if (localStorage.getItem('tk')) {
-        //     config.headers['tk'] = localStorage.getItem('tk')
-        // }
+        console.log("from interceptors");
+        config.headers['tk'] = 'token test'
 
         return config
     },
