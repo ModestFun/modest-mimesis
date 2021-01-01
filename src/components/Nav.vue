@@ -119,6 +119,7 @@ export default defineComponent({
   line-height: 20px;
   margin: 0px auto;
   margin-top: 62px;
+  z-index: 1000;
   padding: 15px 15px;
   text-align: center;
   border-radius: 20px;

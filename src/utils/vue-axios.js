@@ -11,7 +11,7 @@ import axios from 'axios'
 // axios默认配置
 axios.defaults.timeout = 120000 // 超时时间
 axios.defaults.baseURL = './' // 请求前缀路径
-axios.defaults.headers['Content-Type'] = 'application/json;charset=UTF-8' // 请求前缀路径
+// axios.defaults.headers['Content-Type'] = 'application/json;charset=UTF-8' // 请求前缀路径
 
 // 路由请求拦截
 // http request 拦截器

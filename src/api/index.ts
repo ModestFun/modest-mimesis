@@ -1,7 +1,7 @@
 import axios from 'axios'
 import global from '../../config/config.json'
 
- const api = {
+const api = {
   ArticleApi: {
     getArticleList() {
       return axios.get(`${global.dataUrl}/getArticleList`)
