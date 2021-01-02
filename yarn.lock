@@ -1768,7 +1768,7 @@
     "@vue/compiler-core" "3.0.4"
     "@vue/shared" "3.0.4"
 
-"@vue/compiler-sfc@^3.0.0", "@vue/compiler-sfc@^3.0.0-beta.14", "@vue/compiler-sfc@>=3.0.4":
+"@vue/compiler-sfc@^3.0.0", "@vue/compiler-sfc@^3.0.0-beta.14", "@vue/compiler-sfc@>=3.0.0", "@vue/compiler-sfc@>=3.0.4":
   "integrity" "sha1-IRn+HmjSwmiq+iBGHILBOamt+OA="
   "resolved" "https://registry.npm.taobao.org/@vue/compiler-sfc/download/@vue/compiler-sfc-3.0.4.tgz"
   "version" "3.0.4"
@@ -10527,7 +10527,7 @@
   dependencies:
     "is-plain-object" "3.0.1"
 
-"vue@^2 || ^3.0.0-0", "vue@^3.0.0", "vue@^3.0.0-0", "vue@^3.0.1", "vue@^3.0.2", "vue@>=3.0.3", "vue@>=3.0.4", "vue@3.0.4":
+"vue@^2 || ^3.0.0-0", "vue@^3.0.0", "vue@^3.0.0-0", "vue@^3.0.1", "vue@^3.0.2", "vue@>=3.0.0", "vue@>=3.0.3", "vue@>=3.0.4", "vue@3.0.4":
   "integrity" "sha1-hyxlwUP1cXvVOHxhYT2fVfTMD0M="
   "resolved" "https://registry.npm.taobao.org/vue/download/vue-3.0.4.tgz?cache=0&sync_timestamp=1606946160685&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue%2Fdownload%2Fvue-3.0.4.tgz"
   "version" "3.0.4"
@@ -10540,6 +10540,11 @@
   "integrity" "sha1-9evU+mvShpQD4pqJau1JBEVskSM="
   "resolved" "https://npm.udolphin.com/vue/-/vue-2.6.12.tgz"
   "version" "2.6.12"
+
+"vue3-lazyload@^0.2.2-beta":
+  "integrity" "sha512-k198DjJmH8vmtPm90nzs/04MwMGpqmbhrp9foonWyPDCviQtCATYxlvloxRXroElcDRERZCs/+GRjeDVWsPtNw=="
+  "resolved" "https://registry.npmjs.org/vue3-lazyload/-/vue3-lazyload-0.2.2-beta.tgz"
+  "version" "0.2.2-beta"
 
 "vuex@^4.0.0-0":
   "integrity" "sha1-NoHITrb1FxsDntqhfMeBBeIHJPM="

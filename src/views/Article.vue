@@ -6,7 +6,9 @@
         <div class="page">
           <div class="ad">人生不止眼前的苟且，还有远方的你看得见的、看不见的苟且</div>
           <div class="sections">
-            <Section v-for="item in articleList" :result="item"></Section>
+            <router-link v-for="item in articleList" :path="item._id" :to="'/article/'+item._id">
+              <Section :result="item"></Section>
+            </router-link>
           </div>
         </div>
       </a-col>
@@ -24,7 +26,8 @@ import { defineComponent } from 'vue'
 import useArticleList from '../hooks/useArticleList'
 export default defineComponent({
   components: {
-    Section
+    Section,
+    // Section: () => import('@/components/Section')
   },
   async setup () {
     const articleList = await useArticleList()

@@ -1,6 +1,6 @@
 <template>
   <a-row>
-    <div class="section">
+    <div class="section animated">
       <a-row>
         <a-col :xxl="15" :xl="17">
           <marquee behavior="alternate" direction="left" class="title">
@@ -18,13 +18,13 @@
       <a-row>
         <a-col :xxl="15" :xl="15">
           <img
-            class="headImg"
-            src="https://www.modestfun.com:8080/articleImg/?name=12.26_%E5%AD%A6%E4%B9%A0431470"
+            class="headImg zoomLeft"
+            :src="`https://www.modestfun.com:8080/articleImg/?name=${result.titleImg}`"
           />
         </a-col>
         <a-col :xxl="4" :xl="1"></a-col>
         <a-col :xxl="5" :xl="8">
-          <p class="intro">asdsadasdasd</p>
+          <p class="intro zoomRight">{{result.titleText}}</p>
         </a-col>
       </a-row>
       <div class="other">
@@ -48,11 +48,17 @@ export default defineComponent({
 <style >
 .section {
   margin-top: 20px;
+  overflow: hidden;
   width: 100%;
   padding: 14px 10px;
   border-radius: 10px;
   color: var(--commonColor) !important;
   box-shadow: var(--whiteShadow), var(--blackShadow);
+  cursor: pointer;
+}
+
+.section:hover {
+  animation-name: pulse;
 }
 
 .section .title {
@@ -99,7 +105,49 @@ export default defineComponent({
   width: 100%;
   height: 100%;
   padding: 5px;
+  text-align: left;
+  font-size: 16px;
+  padding: 20px;
   border-radius: 15px;
   box-shadow: inset var(--whiteShadow), inset var(--blackShadow);
+}
+
+.zoomTop {
+  animation: zoomTop 1.5s both;
+}
+
+.zoomLeft {
+  animation: zoomLeft 1.5s both;
+}
+
+.zoomRight {
+  animation: zoomRight 1.5s both;
+}
+
+@keyframes zoomTop {
+  0% {
+    transform: translateY(-100%);
+  }
+  50% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes zoomLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes zoomRight {
+  0% {
+    transform: translateX(100%);
+  }
+  50% {
+    transform: translateX(0%);
+  }
 }
 </style>
