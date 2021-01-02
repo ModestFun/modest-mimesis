@@ -1,11 +1,13 @@
+import { reactive } from 'vue';
 import api from '@/api/index';
 
 async function getArticleList() {
-  return await api.ArticleApi.getArticleList()
+  const result = await api.ArticleApi.getArticleList()
+  return result.data
 }
-function useArticleList() {
-  const result = getArticleList()
-  console.log(result)
+async function useArticleList() {
+  const result = await getArticleList()
+  return reactive(result)
 }
 
 export default useArticleList

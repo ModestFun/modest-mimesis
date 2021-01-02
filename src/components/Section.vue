@@ -2,16 +2,17 @@
   <a-row>
     <div class="section">
       <a-row>
-        <a-col :xxl="15" :xl="10">
-          <h2 class="title">标题</h2>
-        </a-col>
-        <a-col :xxl="4" :xl="2"></a-col>
-        <a-col :xxl="15" :xl="5">
-          <h2 class="author">ModestFun</h2>
+        <a-col :xxl="15" :xl="17">
+          <marquee behavior="alternate" direction="left" class="title">
+            <h2>
+              <span class="type">「{{result.contentType}}」</span>
+              {{result.headTitle}}
+            </h2>
+          </marquee>
         </a-col>
         <a-col :xxl="4" :xl="2"></a-col>
         <a-col :xxl="5" :xl="5">
-          <p class="time">2021-1-1</p>
+          <p class="time">{{result.date}}</p>
         </a-col>
       </a-row>
       <a-row>
@@ -35,7 +36,12 @@
 <script>
 import { defineComponent } from "vue";
 export default defineComponent({
-  setup () {
+  props: {
+    result: Object,
+  },
+  setup (props) {
+    console.log(props.result)
+    return { result: props.result }
   }
 })
 </script>
@@ -54,9 +60,13 @@ export default defineComponent({
   height: 37px;
   line-height: 37px;
   text-align: left;
+  padding: 0px 10px;
   color: var(--commonColor) !important;
   border-radius: 10px;
   box-shadow: inset var(--whiteShadow), inset var(--blackShadow);
+}
+.section .title .type {
+  color: var(--selectColor) !important;
 }
 
 .section .author {
@@ -72,7 +82,8 @@ export default defineComponent({
 .section .time {
   height: 37px;
   line-height: 37px;
-  color: var(--commonColor) !important;
+  font-weight: 800;
+  color: var(--selectColor) !important;
   border-radius: 10px;
   box-shadow: inset var(--whiteShadow), inset var(--blackShadow);
 }

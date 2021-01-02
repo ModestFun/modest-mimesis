@@ -1,7 +1,14 @@
 <template>
   <div class="background-default">
     <Nav></Nav>
-    <router-view />
+    <Suspense>
+      <template #default>
+        <router-view />
+      </template>
+      <template #fallback>
+        <div>加载中。。。</div>
+      </template>
+    </Suspense>
   </div>
 </template>
 <script>

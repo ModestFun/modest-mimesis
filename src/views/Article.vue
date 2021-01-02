@@ -6,8 +6,7 @@
         <div class="page">
           <div class="ad">人生不止眼前的苟且，还有远方的你看得见的、看不见的苟且</div>
           <div class="sections">
-            <Section></Section>
-            <Section></Section>
+            <Section v-for="item in articleList" :result="item"></Section>
           </div>
         </div>
       </a-col>
@@ -27,10 +26,10 @@ export default defineComponent({
   components: {
     Section
   },
-  setup () {
-
-    useArticleList()
+  async setup () {
+    const articleList = await useArticleList()
     return {
+      articleList
     }
   }
 })
@@ -61,11 +60,7 @@ export default defineComponent({
   box-shadow: var(--whiteShadow), var(--blackShadow);
 }
 .sections {
-  margin-top: 20px;
   width: 100%;
   height: 100%;
-  padding: 0px 15px;
-  border-radius: 10px;
-  box-shadow: inset var(--whiteShadow), inset var(--blackShadow);
 }
 </style>
