@@ -6,7 +6,7 @@
         <router-view />
       </template>
       <template #fallback>
-        <div>加载中。。。</div>
+        <div class="fallback">加载中。。。</div>
       </template>
     </Suspense>
   </div>
@@ -30,6 +30,12 @@ export default defineComponent({
 });
 </script>
 <style>
+.fallback{
+  z-index: 100000;
+  width: 100%;
+  height: 500px;
+  background: lemonchiffon;
+}
 .background-default {
   background: var(--background);
   position: absolute;

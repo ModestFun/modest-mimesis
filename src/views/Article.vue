@@ -26,8 +26,7 @@ import { defineComponent } from 'vue'
 import useArticleList from '../hooks/useArticleList'
 export default defineComponent({
   components: {
-    Section,
-    // Section: () => import('@/components/Section')
+    Section
   },
   async setup () {
     const articleList = await useArticleList()
