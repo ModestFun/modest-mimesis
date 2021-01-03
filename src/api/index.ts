@@ -3,8 +3,8 @@ import global from '../../config/config.json'
 
 const api = {
   ArticleApi: {
-    getArticleList() {
-      return axios.get(`${global.dataUrl}/getArticleList`)
+    getArticleList(pageNum = 1, pageSize = 10) {
+      return axios.get(`${global.dataUrl}/article/getArticleList?pageSize=${pageSize}&pageNum=${pageNum}`)
     }
   }
 }

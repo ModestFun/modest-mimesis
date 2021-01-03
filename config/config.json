@@ -1,6 +1,6 @@
 {
     "baseUrl": "https://localhost:8081",
-    "dataUrl": "https://www.modestfun.com:8080",
+    "dataUrl": "https://www.modestfun.com:82",
     "webStyle": [
         {
             "background": "#ecf0f3",

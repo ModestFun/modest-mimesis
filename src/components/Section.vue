@@ -5,26 +5,23 @@
         <a-col :xxl="18" :xl="18" :lg="18" :md="18" :xs="15">
           <marquee behavior="alternate" direction="left" class="title">
             <h2>
-              <span class="type">「{{result.contentType}}」</span>
-              {{result.headTitle}}
+              <span class="type">「{{result.type}}」</span>
+              {{result.mainTitle}}
             </h2>
           </marquee>
         </a-col>
         <a-col :xxl="1" :xl="1" :lg="1" :md="1" :xs="1"></a-col>
         <a-col :xxl="5" :xl="5" :lg="5" :md="5" :xs="8">
-          <p class="time">{{result.date}}</p>
+          <p class="time">{{result.lastDate}}</p>
         </a-col>
       </a-row>
       <a-row>
         <a-col :xxl="15" :xl="15" :lg="15" :md="15" :xs="24">
-          <img
-            class="headImg zoomLeft"
-            :src="`https://www.modestfun.com:8080/articleImg/?name=${result.titleImg}`"
-          />
+          <img class="headImg zoomLeft" :src="`${global.dataUrl}${result.coverPath}`" />
         </a-col>
         <a-col :xxl="1" :xl="1" :lg="1" :md="1" :xs="0"></a-col>
         <a-col :xxl="8" :xl="8" :lg="8" :md="8" :xs="24">
-          <p class="intro zoomRight">{{result.titleText}}</p>
+          <p class="intro zoomRight">{{result.info}}</p>
         </a-col>
       </a-row>
       <div class="other">
@@ -35,12 +32,14 @@
 </template>
 <script>
 import { defineComponent } from "vue";
+import global from '../../config/config.json'
 export default defineComponent({
   props: {
     result: Object,
   },
   setup (props) {
-    return { result: props.result }
+    console.log(props.result)
+    return { result: props.result, global }
   }
 })
 </script>
