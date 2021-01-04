@@ -30,6 +30,7 @@ export default defineComponent({
   },
   async setup () {
     const articleList = await useArticleList()
+    console.log(articleList)
     return {
       articleList
     }

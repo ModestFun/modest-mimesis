@@ -6,9 +6,16 @@ async function getArticleList() {
   return result.data.data
 }
 
+function middleWare(data: any[]) {
+  return data.map(i => {
+    i.createDate = api.timeFormat(parseInt(i.createDate))
+    return i
+  })
+}
+
 async function useArticleList() {
   const result = await getArticleList();
-  return reactive(result.data)
+  return reactive(middleWare(result.data))
 }
 
 export default useArticleList

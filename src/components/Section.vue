@@ -12,7 +12,7 @@
         </a-col>
         <a-col :xxl="1" :xl="1" :lg="1" :md="1" :xs="1"></a-col>
         <a-col :xxl="5" :xl="5" :lg="5" :md="5" :xs="8">
-          <p class="time">{{result.lastDate}}</p>
+          <p class="time">{{result.createDate}}</p>
         </a-col>
       </a-row>
       <a-row>
