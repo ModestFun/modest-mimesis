@@ -6,7 +6,7 @@ function resolve (dir) {
 
 module.exports = {
   devServer: {
-    port: 81,
+    port: 9000,
     proxy: {
       '^/icons': {
         target: 'http://localhost:82',
